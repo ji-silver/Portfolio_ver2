@@ -1,5 +1,6 @@
 import './globals.scss'
 import type { Metadata } from 'next'
+import Layout from '../components/layout/Layout'
 
 export const metadata: Metadata = {
   title: 'JIEUN PORTFOLIO',
@@ -13,7 +14,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <Layout />
+        {children}
+      </body>
     </html>
   )
 }
