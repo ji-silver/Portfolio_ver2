@@ -1,13 +1,28 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./layout.module.scss";
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
+import Navbar from "./navbar/Navbar";
 
 const Layout = () => {
+  const pathname = usePathname();
+  const [isOpen, setIsOpen] = useState(false);
+
+  // 버튼, 메뉴 클릭 시 사이드바 닫기
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
+
+  useEffect(() => {
+    setIsOpen(false);
+  }, [pathname]);
+
   return (
-    <div className={styles.container}>
-      <div className={styles.nav}>
+    <>
+      <Navbar isOpen={isOpen} toggleMenu={toggleMenu} />
+      <div className={styles.layout}>
         <div className={styles.sidebar}>
           <div className={styles.profile_container}>
             <div className={styles.profile}>
@@ -21,19 +36,44 @@ const Layout = () => {
           <nav>
             <ul>
               <li>
-                <Link href="/">Home</Link>
+                <Link
+                  href="/"
+                  className={pathname === "/" ? styles.active : ""}
+                >
+                  Home
+                </Link>
               </li>
               <li>
-                <Link href="/about">About</Link>
+                <Link
+                  href="/about"
+                  className={pathname === "/about" ? styles.active : ""}
+                >
+                  About
+                </Link>
               </li>
               <li>
-                <Link href="/portfolio">Portfolio</Link>
+                <Link
+                  href="/portfolio"
+                  className={pathname === "/portfolio" ? styles.active : ""}
+                >
+                  Portfolio
+                </Link>
               </li>
               <li>
-                <Link href="/blog">Blog</Link>
+                <Link
+                  href="/blog"
+                  className={pathname === "/blog" ? styles.active : ""}
+                >
+                  Blog
+                </Link>
               </li>
               <li>
-                <Link href="/contact">Contact</Link>
+                <Link
+                  href="/contact"
+                  className={pathname === "/contact" ? styles.active : ""}
+                >
+                  Contact
+                </Link>
               </li>
             </ul>
           </nav>
@@ -43,10 +83,7 @@ const Layout = () => {
           </div>
         </div>
       </div>
-      <div className={styles.content}>
-        <div className={styles.pages}></div>
-      </div>
-    </div>
+    </>
   );
 };
 
