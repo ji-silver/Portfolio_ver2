@@ -1,3 +1,4 @@
+@import "../../app/component.scss";
 .hero {
     height: 100vh;
     display: flex;
@@ -29,6 +30,11 @@
             border-radius: 100%;
             width: 40px;
             height: 40px;
+            transition: color 0.3s ease;
+
+            &:hover {
+                color: $purple-color;
+            }
         }
     }
 }

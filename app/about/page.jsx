@@ -13,7 +13,7 @@ const AboutPage = () => {
           <h2 className="title">about me</h2>
           <span className={styles.miniTitle}>- Nice to meet you!</span>
           <div className={styles.image_container}>
-            <Image src="/about.jpg" alt="about" fill />
+            <Image src="/about.JPG" alt="about" fill sizes="100vw, 400px" />
           </div>
           <p>
             안녕하세요, <span>김지은</span>입니다.

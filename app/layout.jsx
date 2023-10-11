@@ -1,5 +1,5 @@
 import "./globals.scss";
-import Layout from "../components/layout/Layout";
+import AnimatedCursor from "react-animated-cursor";
 
 export const metadata = {
   title: "JIEUN PORTFOLIO",
@@ -8,8 +8,22 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body>{children}</body>
+    <html lang="kr">
+      <body>
+        <AnimatedCursor
+          outerSize={20}
+          outerScale={3}
+          trailingSpeed={6}
+          showSystemCursor={true}
+          outerStyle={{
+            backgroundColor: "#c6cbef67",
+          }}
+          innerStyle={{
+            display: "none",
+          }}
+        />
+        {children}
+      </body>
     </html>
   );
 }
