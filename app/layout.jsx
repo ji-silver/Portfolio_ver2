@@ -17,6 +17,7 @@ export default function RootLayout({ children }) {
           showSystemCursor={true}
           outerStyle={{
             backgroundColor: "#c6cbef67",
+            zIndex: "9999",
           }}
           innerStyle={{
             display: "none",

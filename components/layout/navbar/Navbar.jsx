@@ -7,7 +7,7 @@ import { usePathname } from "next/navigation";
 const Navbar = ({ isOpen, toggleMenu }) => {
   const pathname = usePathname();
   return (
-    <div>
+    <>
       <div className={styles.topbar}>
         <div className={styles.topbar_inner}>
           <Link href="/">
@@ -64,7 +64,7 @@ const Navbar = ({ isOpen, toggleMenu }) => {
           </li>
         </ul>
       </div>
-    </div>
+    </>
   );
 };
 

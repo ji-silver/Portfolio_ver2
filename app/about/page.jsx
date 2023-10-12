@@ -26,8 +26,8 @@ const AboutPage = () => {
             좋아합니다.
           </p>
 
-          <span className={styles.miniTitle}>- Skils</span>
-          <div className={styles.skils}>
+          <span className={styles.miniTitle}>- Skills</span>
+          <div className={styles.skills}>
             <ul>
               {skillsData.map((skill, index) => (
                 <li key={index}>{skill}</li>

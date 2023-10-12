@@ -20,13 +20,18 @@ const Layout = () => {
   }, [pathname]);
 
   return (
-    <>
+    <div>
       <Navbar isOpen={isOpen} toggleMenu={toggleMenu} />
       <div className={styles.layout}>
         <div className={styles.sidebar}>
           <div className={styles.profile_container}>
             <div className={styles.profile}>
-              <Image src="/profile.png" alt="profile" fill />
+              <Image
+                src="/profile.png"
+                alt="profile"
+                fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw"
+              />
             </div>
             <div className={styles.desc}>
               <h3>JIEUN KIM</h3>
@@ -83,7 +88,7 @@ const Layout = () => {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
