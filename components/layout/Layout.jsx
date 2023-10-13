@@ -4,6 +4,8 @@ import styles from "./layout.module.scss";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Navbar from "./navbar/Navbar";
+import profile from "@/public/profile.png";
+import Image from "next/image";
 
 const Layout = () => {
   const pathname = usePathname();
@@ -25,7 +27,7 @@ const Layout = () => {
         <div className={styles.sidebar}>
           <div className={styles.profile_container}>
             <div className={styles.profile}>
-              <img src="/profile.png" alt="profile" />
+              <Image src={profile} alt="profile" width={150} height={150} />
             </div>
             <div className={styles.desc}>
               <h3>JIEUN KIM</h3>

@@ -86,7 +86,7 @@ const PortfolioPage = () => {
           </div>
           <div className={styles.list} onMouseMove={handleMouseMove}>
             <ul>
-              {filteredProjects.map((item) => (
+              {filteredProjects.map((item, index) => (
                 <li
                   key={item.id}
                   onMouseEnter={() => handleMouseEnter(item.id)}
@@ -94,7 +94,18 @@ const PortfolioPage = () => {
                   onClick={() => openDetail(item.id)} // 클릭 시 상세 정보 열기
                 >
                   <div className={styles.image_container}>
-                    <Image src={item.image} alt="project" fill />
+                    <Image
+                      src={item.image}
+                      alt="project"
+                      fill
+                      priority
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw"
+                      className={`${
+                        filteredProjects.length > index + 1
+                          ? styles.loading
+                          : ""
+                      }`}
+                    />
                     {hoveredImage === item.id && (
                       <div
                         style={{ top: textPosition.y, left: textPosition.x }}

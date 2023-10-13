@@ -1,6 +1,7 @@
 import Layout from "@/components/layout/Layout";
 import React from "react";
 import styles from "./aboutPage.module.scss";
+import about from "@/public/about.jpg";
 import Image from "next/image";
 import { skillsData } from "@/lib/data";
 
@@ -14,9 +15,11 @@ const AboutPage = () => {
           <span className="miniTitle">- Nice to meet you!</span>
           <div className={styles.image_container}>
             <Image
-              src="/about.jpg"
+              src={about}
               alt="about"
               fill
+              placeholder="blur"
+              priority
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw"
             />
           </div>

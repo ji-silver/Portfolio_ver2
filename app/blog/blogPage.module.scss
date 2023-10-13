@@ -77,6 +77,11 @@
 
                         .info {
                             width: 60%;
+
+                            .loading {
+                                background: #0000000c;
+                            }
+
                             .date {
                                 display: flex;
                                 align-items: center;
