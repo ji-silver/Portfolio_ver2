@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap");
+@import "./component.scss";
 
 * {
   box-sizing: border-box;
@@ -67,4 +68,12 @@ body {
     position: absolute;
     left: 0;
   }
+}
+
+.miniTitle {
+  color: $purple-color;
+  font-size: 18px;
+  padding: 20px 0;
+  font-weight: 500;
+  font-family: "Montserrat", sans-serif;
 }

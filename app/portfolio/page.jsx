@@ -4,6 +4,7 @@ import Layout from "@/components/layout/Layout";
 import styles from "./portfolioPage.module.scss";
 import { projectsData } from "@/lib/data";
 import Detail from "@/components/detail/Detail";
+import Image from "next/image";
 
 const PortfolioPage = () => {
   const [hoveredImage, setHoveredImage] = useState(null);
@@ -93,7 +94,7 @@ const PortfolioPage = () => {
                   onClick={() => openDetail(item.id)} // 클릭 시 상세 정보 열기
                 >
                   <div className={styles.image_container}>
-                    <img src={item.image} alt="" />
+                    <Image src={item.image} alt="project" fill />
                     {hoveredImage === item.id && (
                       <div
                         style={{ top: textPosition.y, left: textPosition.x }}

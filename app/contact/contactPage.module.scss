@@ -1,0 +1,55 @@
+@import "../component.scss";
+
+.container {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url("https://images.unsplash.com/photo-1560692901-45d529ed05bf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3864&q=80");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top;
+}
+
+.contact {
+    max-width: 1200px;
+    width: 100%;
+    min-height: 100vh;
+    padding: 100px 50px;
+    margin: 0 auto;
+    color: white;
+
+    @media (max-width: 1600px) {
+        max-width: 968px;
+    }
+
+    @media (max-width: 768px) {
+        padding: 100px 15px;
+    }
+    h2 {
+        color: initial;
+    }
+    .desc {
+        line-height: 2rem;
+        font-weight: 300;
+        p {
+        }
+        ul {
+            li {
+                span {
+                    display: flex;
+                    align-items: center;
+                    gap: 0.5rem;
+                    padding: 5px 0;
+
+                    a {
+                        background: #00000065;
+                        border-radius: 4px;
+                        padding: 0 7px;
+
+                        &:hover {
+                            color: $light-purple-color;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

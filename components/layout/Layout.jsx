@@ -2,7 +2,6 @@
 import React, { useEffect, useState } from "react";
 import styles from "./layout.module.scss";
 import Link from "next/link";
-import Image from "next/image";
 import { usePathname } from "next/navigation";
 import Navbar from "./navbar/Navbar";
 
@@ -26,12 +25,7 @@ const Layout = () => {
         <div className={styles.sidebar}>
           <div className={styles.profile_container}>
             <div className={styles.profile}>
-              <Image
-                src="/profile.png"
-                alt="profile"
-                fill
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw"
-              />
+              <img src="/profile.png" alt="profile" />
             </div>
             <div className={styles.desc}>
               <h3>JIEUN KIM</h3>
