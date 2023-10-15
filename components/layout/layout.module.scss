@@ -62,7 +62,12 @@
                     text-align: center;
 
                     a {
+                        transition: all 0.3s;
                         &.active {
+                            color: $purple-color;
+                            font-weight: bold;
+                        }
+                        &:hover {
                             color: $purple-color;
                             font-weight: bold;
                         }

@@ -5,6 +5,8 @@ import styles from "./portfolioPage.module.scss";
 import { projectsData } from "@/lib/data";
 import Detail from "@/components/detail/Detail";
 import Image from "next/image";
+import { fadeIn, fadeInAnimation } from "@/lib/variants";
+import { motion } from "framer-motion";
 
 const PortfolioPage = () => {
   const [hoveredImage, setHoveredImage] = useState(null);
@@ -62,8 +64,26 @@ const PortfolioPage = () => {
       <div className={`${styles.container} wrapper`}>
         <div className={styles.portfolio}>
           <div className={styles.title_container}>
-            <h2 className="title">Portfolio</h2>
-            <ul className={styles.filter}>
+            <motion.h2
+              className="title"
+              variants={fadeIn("left", 0.3)}
+              initial="hidden"
+              whileInView={"show"}
+              viewport={{
+                once: true,
+              }}
+            >
+              Portfolio
+            </motion.h2>
+            <motion.ul
+              className={styles.filter}
+              variants={fadeIn("right", 0.3)}
+              initial="hidden"
+              whileInView={"show"}
+              viewport={{
+                once: true,
+              }}
+            >
               <li
                 onClick={() => setSelectedFilter("전체")}
                 className={selectedFilter === "전체" ? styles.select : ""}
@@ -82,16 +102,23 @@ const PortfolioPage = () => {
               >
                 개인
               </li>
-            </ul>
+            </motion.ul>
           </div>
           <div className={styles.list} onMouseMove={handleMouseMove}>
             <ul>
               {filteredProjects.map((item, index) => (
-                <li
+                <motion.li
                   key={item.id}
                   onMouseEnter={() => handleMouseEnter(item.id)}
                   onMouseLeave={handleMouseLeave}
                   onClick={() => openDetail(item.id)} // 클릭 시 상세 정보 열기
+                  variants={fadeInAnimation}
+                  initial="initial"
+                  whileInView="animate"
+                  viewport={{
+                    once: true,
+                  }}
+                  custom={index}
                 >
                   <div className={styles.image_container}>
                     <Image
@@ -121,7 +148,7 @@ const PortfolioPage = () => {
                       </div>
                     )}
                   </div>
-                </li>
+                </motion.li>
               ))}
             </ul>
           </div>
