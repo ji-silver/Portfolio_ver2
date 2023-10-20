@@ -7,7 +7,7 @@ import Image from "next/image";
 
 const Detail = ({ project, onClose }) => {
   return (
-    <div className={styles.modal_wrap}>
+    <div className={styles.modal_wrap} onClick={onClose}>
       <div className={styles.detail}>
         <div className={styles.container}>
           <div className={styles.modal_header}>
