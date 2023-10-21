@@ -27,7 +27,14 @@ const Layout = () => {
         <div className={styles.sidebar}>
           <div className={styles.profile_container}>
             <div className={styles.profile}>
-              <Image src={profile} alt="profile" width={150} height={150} />
+              <Image
+                src={profile}
+                alt="profile"
+                width={150}
+                height={150}
+                layout="fixed"
+                loading="eager"
+              />
             </div>
             <div className={styles.desc}>
               <h3>JIEUN KIM</h3>

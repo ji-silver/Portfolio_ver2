@@ -37,6 +37,7 @@ export default function Home() {
             <motion.a
               href="https://github.com/ji-silver"
               target="_blank"
+              aria-label="깃허브 프로필 바로 가기"
               variants={fadeIn("up", 0.3)}
               initial="hidden"
               whileInView={"show"}
@@ -49,6 +50,7 @@ export default function Home() {
             <motion.a
               href="https://jisilver-k.tistory.com/"
               target="_blank"
+              aria-label="티스토리 블로그 바로 가기"
               variants={fadeIn("up", 0.4)}
               initial="hidden"
               whileInView={"show"}
@@ -59,6 +61,7 @@ export default function Home() {
             <motion.a
               href="https://www.instagram.com/jisilver.k/"
               target="_blank"
+              aria-label="인스타그램 바로 가기"
               variants={fadeIn("up", 0.5)}
               initial="hidden"
               whileInView={"show"}

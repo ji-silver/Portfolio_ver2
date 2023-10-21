@@ -54,11 +54,11 @@ const Detail = ({ project, onClose }) => {
                     <div className={styles.button_container}>
                       {project.view ? (
                         <a href={project.view} target="_blank">
-                          View <CgArrowLongRight />
+                          VIEW <CgArrowLongRight />
                         </a>
                       ) : null}
                       <a href={project.git} target="_blank">
-                        Git <CgArrowLongRight />
+                        README <CgArrowLongRight />
                       </a>
                     </div>
                   </ul>
