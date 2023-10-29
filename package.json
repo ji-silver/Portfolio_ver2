@@ -9,12 +9,14 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "chart.js": "^4.4.0",
     "framer-motion": "^10.16.4",
     "gsap": "^3.12.2",
     "next": "13.5.4",
     "plaiceholder": "^3.0.0",
     "react": "^18",
     "react-animated-cursor": "^2.10.1",
+    "react-chartjs-2": "^5.2.0",
     "react-dom": "^18",
     "react-icons": "^4.11.0"
   },

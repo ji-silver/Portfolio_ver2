@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Layout from "@/components/layout/Layout";
 import styles from "./portfolioPage.module.scss";
 import { projectsData } from "@/lib/data";
@@ -13,6 +13,14 @@ const PortfolioPage = () => {
   const [textPosition, setTextPosition] = useState({ x: 0, y: 0 });
   const [selectedFilter, setSelectedFilter] = useState("전체");
   const [selectedProject, setSelectedProject] = useState(null);
+
+  useEffect(() => {
+    if (selectedProject) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+  }, [selectedProject]);
 
   // 필터 데이터
   const filteredProjects = projectsData.filter((item) => {
