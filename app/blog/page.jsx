@@ -6,10 +6,12 @@ import { HiCalendar } from "react-icons/hi";
 import { CgArrowLongRight } from "react-icons/cg";
 import { fadeIn } from "@/lib/variants";
 import { motion } from "framer-motion";
+import { usePathname } from "next/navigation";
 
 const BlogPage = () => {
   const [blogData, setBlogData] = useState([]);
   const [loading, setLoading] = useState(true);
+  const pathname = usePathname();
   const url = "https://jisilver-k.tistory.com/rss";
 
   // 블로그 글 가져오기
@@ -29,8 +31,10 @@ const BlogPage = () => {
       }
     };
 
-    fetchRss();
-  }, []);
+    if (pathname === "/blog") {
+      fetchRss();
+    }
+  }, [pathname]);
 
   return (
     <div>
