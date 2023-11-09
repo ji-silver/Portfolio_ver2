@@ -4,37 +4,28 @@ import Layout from "@/components/layout/Layout";
 import styles from "./blogPage.module.scss";
 import { HiCalendar } from "react-icons/hi";
 import { CgArrowLongRight } from "react-icons/cg";
-import { fadeIn } from "@/lib/variants";
+import { fadeIn, formatDate } from "@/lib/variants";
 import { motion } from "framer-motion";
-import { usePathname } from "next/navigation";
 
 const BlogPage = () => {
   const [blogData, setBlogData] = useState([]);
   const [loading, setLoading] = useState(true);
-  const pathname = usePathname();
-  const url = "https://jisilver-k.tistory.com/rss";
 
   // 블로그 글 가져오기
   useEffect(() => {
     const fetchRss = async () => {
       try {
-        const response = await fetch(
-          "https://api.rss2json.com/v1/api.json?rss_url=" + url,
-          { cache: "force-cache" }
-        );
-        const rss = await response.json();
+        const response = await fetch("/api/blog/");
+        const data = await response.json();
         setLoading(false);
-        setBlogData(rss.items);
+        setBlogData(data);
       } catch (error) {
         console.error(error);
         setLoading(false);
       }
     };
-
-    if (pathname === "/blog") {
-      fetchRss();
-    }
-  }, [pathname]);
+    fetchRss();
+  }, []);
 
   return (
     <div>
@@ -74,7 +65,7 @@ const BlogPage = () => {
                         <div className={styles.info}>
                           <p className={styles.date}>
                             <HiCalendar />
-                            <span>{item.pubDate.split(" ")[0]}</span>
+                            <span>{formatDate(item.pubDate)}</span>
                           </p>
                           <span className={styles.title}>{item.title}</span>
                         </div>

@@ -1,6 +1,5 @@
 import "./globals.scss";
 import AnimatedCursor from "react-animated-cursor";
-import Head from "next/head";
 
 export const metadata = {
   title: "프론트엔드 김지은 - 포트폴리오",
