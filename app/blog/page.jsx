@@ -11,7 +11,7 @@ const BlogPage = () => {
   const [blogData, setBlogData] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  // 블로그 글 가져오기
+  // 블로그 글 가져오기...
   useEffect(() => {
     const fetchRss = async () => {
       try {
