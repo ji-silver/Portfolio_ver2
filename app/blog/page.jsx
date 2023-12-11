@@ -15,7 +15,7 @@ const BlogPage = () => {
   useEffect(() => {
     const fetchRss = async () => {
       try {
-        const response = await fetch("/api/blog/", { cache: "force-cache" });
+        const response = await fetch("/api/blog/", { cache: "no-store" });
         const data = await response.json();
         setLoading(false);
         setBlogData(data);
