@@ -31,7 +31,7 @@ export default function Home() {
               once: true,
             }}
           >
-            안녕하세요! 프론트엔드 개발자를 꿈꾸는 김지은입니다.
+            안녕하세요! 개발자를 꿈꾸는 김지은입니다.
           </motion.p>
           <div className={styles.social}>
             <motion.a

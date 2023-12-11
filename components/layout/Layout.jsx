@@ -4,7 +4,7 @@ import styles from "./layout.module.scss";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Navbar from "./navbar/Navbar";
-import profile from "@/public/profile.png";
+import profile from "@/public/profile1.png";
 import Image from "next/image";
 
 const Layout = () => {
@@ -27,18 +27,11 @@ const Layout = () => {
         <div className={styles.sidebar}>
           <div className={styles.profile_container}>
             <div className={styles.profile}>
-              <Image
-                src={profile}
-                alt="profile"
-                width={150}
-                height={150}
-                layout="fixed"
-                loading="eager"
-              />
+              <Image src={profile} alt="profile" loading="eager" />
             </div>
             <div className={styles.desc}>
               <h3>JIEUN KIM</h3>
-              <p>Frontend Developer</p>
+              <p>Developer</p>
             </div>
           </div>
           <nav>
